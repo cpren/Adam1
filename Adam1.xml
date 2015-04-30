@@ -1,47 +1,57 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="led_select" id="164" inline="true" x="20" y="16">
-    <field name="ACTION">ON</field>
-    <value name="LED">
-      <block type="math_number" id="171">
+  <block type="variables_set" id="204" inline="true" x="-13" y="13">
+    <field name="VAR">light</field>
+    <value name="VALUE">
+      <block type="math_number" id="211">
         <field name="NUM">1</field>
       </block>
     </value>
     <next>
-      <block type="robot_delay" id="173" inline="true">
-        <value name="DELAY">
-          <block type="math_number" id="180">
-            <field name="NUM">2000</field>
+      <block type="controls_repeat" id="218" inline="true">
+        <value name="TIMES">
+          <block type="math_number" id="225">
+            <field name="NUM">6</field>
           </block>
         </value>
-        <next>
-          <block type="led_select" id="189" inline="true">
-            <field name="ACTION">OFF</field>
+        <statement name="DO">
+          <block type="led_select" id="234" inline="true">
+            <field name="ACTION">ON</field>
             <value name="LED">
-              <block type="math_number" id="196">
-                <field name="NUM">1</field>
+              <block type="variables_get" id="238">
+                <field name="VAR">light</field>
               </block>
             </value>
             <next>
-              <block type="led_select" id="197" inline="true">
-                <field name="ACTION">FLASH</field>
-                <value name="LED">
-                  <block type="math_number" id="198">
-                    <field name="NUM">5</field>
+              <block type="robot_delay" id="240" inline="true">
+                <value name="DELAY">
+                  <block type="math_number" id="247">
+                    <field name="NUM">500</field>
                   </block>
                 </value>
                 <next>
-                  <block type="robot_delay" id="201" inline="true">
-                    <value name="DELAY">
-                      <block type="math_number" id="202">
-                        <field name="NUM">1000</field>
+                  <block type="led_select" id="256" inline="true">
+                    <field name="ACTION">OFF</field>
+                    <value name="LED">
+                      <block type="variables_get" id="260">
+                        <field name="VAR">light</field>
                       </block>
                     </value>
                     <next>
-                      <block type="led_select" id="199" inline="true">
-                        <field name="ACTION">FLASH</field>
-                        <value name="LED">
-                          <block type="math_number" id="200">
-                            <field name="NUM">5</field>
+                      <block type="variables_set" id="285" inline="true">
+                        <field name="VAR">light</field>
+                        <value name="VALUE">
+                          <block type="math_arithmetic" id="292" inline="true">
+                            <field name="OP">ADD</field>
+                            <value name="A">
+                              <block type="variables_get" id="296">
+                                <field name="VAR">light</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_number" id="303">
+                                <field name="NUM">1</field>
+                              </block>
+                            </value>
                           </block>
                         </value>
                       </block>
@@ -51,7 +61,7 @@
               </block>
             </next>
           </block>
-        </next>
+        </statement>
       </block>
     </next>
   </block>
