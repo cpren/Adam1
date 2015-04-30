@@ -1,62 +1,52 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="variables_set" id="2" inline="true" x="109" y="35">
-    <field name="VAR">turns</field>
-    <value name="VALUE">
-      <block type="math_number" id="9">
-        <field name="NUM">4</field>
+  <block type="led_select" id="164" inline="true" x="20" y="16">
+    <field name="ACTION">ON</field>
+    <value name="LED">
+      <block type="math_number" id="171">
+        <field name="NUM">1</field>
       </block>
     </value>
     <next>
-      <block type="variables_set" id="40" inline="true">
-        <field name="VAR">side</field>
-        <value name="VALUE">
-          <block type="math_number" id="47">
+      <block type="robot_delay" id="173" inline="true">
+        <value name="DELAY">
+          <block type="math_number" id="180">
             <field name="NUM">2000</field>
           </block>
         </value>
         <next>
-          <block type="variables_set" id="53" inline="true">
-            <field name="VAR">turn</field>
-            <value name="VALUE">
-              <block type="math_number" id="60">
-                <field name="NUM">1300</field>
+          <block type="led_select" id="189" inline="true">
+            <field name="ACTION">OFF</field>
+            <value name="LED">
+              <block type="math_number" id="196">
+                <field name="NUM">1</field>
               </block>
             </value>
             <next>
-              <block type="controls_repeat" id="81" inline="true">
-                <value name="TIMES">
-                  <block type="variables_get" id="95">
-                    <field name="VAR">turns</field>
+              <block type="led_select" id="197" inline="true">
+                <field name="ACTION">ON</field>
+                <value name="LED">
+                  <block type="math_number" id="198">
+                    <field name="NUM">5</field>
                   </block>
                 </value>
-                <statement name="DO">
-                  <block type="movement_forward" id="114">
+                <next>
+                  <block type="robot_delay" id="201" inline="true">
+                    <value name="DELAY">
+                      <block type="math_number" id="202">
+                        <field name="NUM">2000</field>
+                      </block>
+                    </value>
                     <next>
-                      <block type="robot_delay" id="116" inline="true">
-                        <value name="DELAY">
-                          <block type="variables_get" id="124">
-                            <field name="VAR">side</field>
+                      <block type="led_select" id="199" inline="true">
+                        <field name="ACTION">ON</field>
+                        <value name="LED">
+                          <block type="math_number" id="200">
+                            <field name="NUM">5</field>
                           </block>
                         </value>
-                        <next>
-                          <block type="movement_right" id="134">
-                            <next>
-                              <block type="robot_delay" id="136" inline="true">
-                                <value name="DELAY">
-                                  <block type="variables_get" id="144">
-                                    <field name="VAR">turn</field>
-                                  </block>
-                                </value>
-                              </block>
-                            </next>
-                          </block>
-                        </next>
                       </block>
                     </next>
                   </block>
-                </statement>
-                <next>
-                  <block type="movement_stop" id="155"></block>
                 </next>
               </block>
             </next>
