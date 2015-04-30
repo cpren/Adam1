@@ -1,1 +1,68 @@
-<xml xmlns="http://www.w3.org/1999/xhtml"></xml>
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="variables_set" id="2" inline="true" x="109" y="35">
+    <field name="VAR">turns</field>
+    <value name="VALUE">
+      <block type="math_number" id="9">
+        <field name="NUM">4</field>
+      </block>
+    </value>
+    <next>
+      <block type="variables_set" id="40" inline="true">
+        <field name="VAR">side size</field>
+        <value name="VALUE">
+          <block type="math_number" id="47">
+            <field name="NUM">2000</field>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set" id="53" inline="true">
+            <field name="VAR">turn time</field>
+            <value name="VALUE">
+              <block type="math_number" id="60">
+                <field name="NUM">1300</field>
+              </block>
+            </value>
+            <next>
+              <block type="controls_repeat" id="81" inline="true">
+                <value name="TIMES">
+                  <block type="variables_get" id="95">
+                    <field name="VAR">turns</field>
+                  </block>
+                </value>
+                <statement name="DO">
+                  <block type="movement_forward" id="114">
+                    <next>
+                      <block type="robot_delay" id="116" inline="true">
+                        <value name="DELAY">
+                          <block type="variables_get" id="124">
+                            <field name="VAR">side size</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="movement_right" id="134">
+                            <next>
+                              <block type="robot_delay" id="136" inline="true">
+                                <value name="DELAY">
+                                  <block type="variables_get" id="144">
+                                    <field name="VAR">turn time</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <next>
+                  <block type="movement_stop" id="155"></block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>
