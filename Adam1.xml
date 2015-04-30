@@ -29,33 +29,23 @@
                   </block>
                 </value>
                 <next>
-                  <block type="led_select" id="256" inline="true">
-                    <field name="ACTION">OFF</field>
-                    <value name="LED">
-                      <block type="variables_get" id="260">
-                        <field name="VAR">light</field>
-                      </block>
-                    </value>
-                    <next>
-                      <block type="variables_set" id="285" inline="true">
-                        <field name="VAR">light</field>
-                        <value name="VALUE">
-                          <block type="math_arithmetic" id="292" inline="true">
-                            <field name="OP">ADD</field>
-                            <value name="A">
-                              <block type="variables_get" id="296">
-                                <field name="VAR">light</field>
-                              </block>
-                            </value>
-                            <value name="B">
-                              <block type="math_number" id="303">
-                                <field name="NUM">1</field>
-                              </block>
-                            </value>
+                  <block type="variables_set" id="285" inline="true">
+                    <field name="VAR">light</field>
+                    <value name="VALUE">
+                      <block type="math_arithmetic" id="292" inline="true">
+                        <field name="OP">ADD</field>
+                        <value name="A">
+                          <block type="variables_get" id="296">
+                            <field name="VAR">light</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number" id="303">
+                            <field name="NUM">1</field>
                           </block>
                         </value>
                       </block>
-                    </next>
+                    </value>
                   </block>
                 </next>
               </block>
