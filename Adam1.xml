@@ -8,7 +8,7 @@
     </value>
     <next>
       <block type="variables_set" id="40" inline="true">
-        <field name="VAR">side size</field>
+        <field name="VAR">side</field>
         <value name="VALUE">
           <block type="math_number" id="47">
             <field name="NUM">2000</field>
@@ -16,7 +16,7 @@
         </value>
         <next>
           <block type="variables_set" id="53" inline="true">
-            <field name="VAR">turn time</field>
+            <field name="VAR">turn</field>
             <value name="VALUE">
               <block type="math_number" id="60">
                 <field name="NUM">1300</field>
@@ -35,7 +35,7 @@
                       <block type="robot_delay" id="116" inline="true">
                         <value name="DELAY">
                           <block type="variables_get" id="124">
-                            <field name="VAR">side size</field>
+                            <field name="VAR">side</field>
                           </block>
                         </value>
                         <next>
@@ -44,7 +44,7 @@
                               <block type="robot_delay" id="136" inline="true">
                                 <value name="DELAY">
                                   <block type="variables_get" id="144">
-                                    <field name="VAR">turn time</field>
+                                    <field name="VAR">turn</field>
                                   </block>
                                 </value>
                               </block>
